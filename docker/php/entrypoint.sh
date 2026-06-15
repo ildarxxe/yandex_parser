@@ -7,7 +7,7 @@ if [ "${APP_SKIP_INIT:-false}" != "true" ]; then
     fi
 
     if [ ! -f vendor/autoload.php ]; then
-        composer install --no-interaction
+        composer install --no-interaction --prefer-dist --no-progress
     fi
 
     if ! grep -q '^APP_KEY=base64:' .env; then
